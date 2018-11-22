@@ -20,6 +20,13 @@ In a terminal, check the version of Python you have: `python -V`. If you have Py
 3. Explore the provided code, and make start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
 4. Write code to implement the updates to get this site on its way to being a mobile-ready website.
 
+### References
+
+1. Service Worker fundamentals from developers.google.com.
+2. w3schools.com for css.
+3. walkthroughs
+4. audits from "Inspect element" for accessibility.
+
 ### Note about ES6
 
 Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write. 

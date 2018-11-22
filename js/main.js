@@ -1,3 +1,24 @@
+//procedure for registration of service worker file.
+function Register() {
+  this.registerServiceWorker();
+}
+
+Register.prototype.registerServiceWorker = () => {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./js/sw.js')
+    .then(function() {
+      console.log('Successfully registered!');
+    })
+    .catch(function() {
+      console.log('Registration failed!');
+    });
+  }
+}
+
+let register = new Register();
+register.registerServiceWorker();
+//service worker registered.
+
 let restaurants,
   neighborhoods,
   cuisines
@@ -130,6 +151,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     ul.append(createRestaurantHTML(restaurant));
   });
   addMarkersToMap();
+
 }
 
 /**
@@ -141,10 +163,14 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = restaurant.name + " restaurant in " + restaurant.neighborhood;
   li.append(image);
 
+  //document.getElementById('restaurant-img').setAttribute("alt",restaurant.name)
+  //image.setAttribute("alt", restaurant.name);
+
   const name = document.createElement('h1');
-  name.innerHTML = restaurant.name;
+  name.innerHTML = "<b>" + restaurant.name + "</b>";
   li.append(name);
 
   const neighborhood = document.createElement('p');

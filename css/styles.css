@@ -44,6 +44,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 #footer {
   background-color: #444;
+  width: 100%;
   color: #aaa;
   display: block;
   font-size: 8pt;
@@ -80,7 +81,7 @@ nav h1 a img{
 #breadcrumb {
     padding: 10px 40px 16px;
     list-style: none;
-    background-color: #eee;
+    background-color: #ccc;
     font-size: 17px;
     margin: 0;
     width: calc(50% - 80px);
@@ -128,7 +129,7 @@ nav h1 a img{
 }
 .filter-options h2 {
   color: white;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: normal;
   line-height: 1;
   margin: 0 20px;
@@ -171,6 +172,7 @@ nav h1 a img{
 #restaurants-list li {
   background-color: #fff;
   border: 2px solid #ccc;
+  box-shadow:grey 5px 5px;
   font-family: Arial,sans-serif;
   margin: 15px;
   min-height: 380px;
@@ -225,16 +227,19 @@ nav h1 a img{
   right: 0;
   top: 80px;
   width: 50%;
+  z-index: 0;
 }
 .inside #map {
   background-color: #ccc;
   height: 100%;
   width: 100%;
+  z-index: 0 !important;
 }
 .inside #footer {
+  z-index: 1000;
   bottom: 0;
-  position: absolute;
-  width: 50%;
+  position: relative;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -268,15 +273,20 @@ nav h1 a img{
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: 5px 5px black;
   padding: 140px 40px 30px;
   width: 50%;
 }
 #restaurant-container {
+  box-shadow: 5px 5px black;
   display: flex;
   flex-direction: column;
 }
 #reviews-container {
   padding: 30px 40px 80px;
+  border-radius: 5px;
+  box-shadow: #666 5px 5px;
 }
 #reviews-container h2 {
   color: #f58500;
@@ -290,6 +300,8 @@ nav h1 a img{
   padding: 0;
 }
 #reviews-list li {
+  border-radius: 5px;
+  box-shadow: 5px 5px #3397DB;
   background-color: #fff;
     border: 2px solid #f3f3f3;
   display: block;
